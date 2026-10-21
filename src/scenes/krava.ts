@@ -121,7 +121,7 @@ ${flowers(21, 70, 0, 1600, 770, 990)}
 </g>
 ${grass(12, 50, 100, 560, 820, [18, 40], ["#4e8f2e", "#5fa23a"], 8)}
 
-<g transform="translate(-40 -50)">
+<g transform="translate(-40 -50) translate(830 822) scale(0.96) translate(-830 -822)">
 ${shadow(810, 822, 230, 22)}
 ${COW}
 </g>
