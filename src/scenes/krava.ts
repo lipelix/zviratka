@@ -227,24 +227,30 @@ const COW = `
   <!-- neck -->
   <path d="M900 534 C935 515 980 522 1000 556 L1004 640 C985 662 940 652 922 628 Z" fill="url(#k-body)"/>
   <path d="M905 534 C935 516 965 520 985 536 C960 545 930 556 912 580 Z" fill="url(#k-patch)"/>
-  <g class="head" style="transform-origin:960px 570px">
-    <path class="ear" style="transform-origin:985px 560px" d="M985 560 C960 548 935 552 928 566 C945 578 970 576 990 570 Z" fill="#9c4a2b"/>
-    <path d="M992 536 C996 520 1006 506 1020 500 C1014 512 1008 526 1006 540 Z" fill="#efe2c4"/>
-    <path d="M972 548 C995 526 1036 530 1050 560 L1066 640 C1070 670 1050 688 1022 688 C996 688 984 670 982 640 Z" fill="#fffaf3"/>
-    <path d="M972 548 C990 530 1012 528 1028 534 C1010 560 1000 590 1004 612 C990 600 978 576 972 548 Z" fill="url(#k-patch)"/>
-    ${eye(1022, 590, 9, "#fffaf3", 1.3)}
-    <path class="mouth-open" d="M1008 676 C1018 702 1058 706 1068 680 Z" fill="#6b2e2a"/>
-    <g class="jaw" style="transform-origin:1000px 676px">
-      <ellipse cx="1036" cy="684" rx="26" ry="10" fill="#d48b84"/>
-    </g>
-    <ellipse cx="1038" cy="664" rx="32" ry="24" fill="#efb2a8"/>
-    <ellipse cx="1030" cy="660" rx="5" ry="3.5" fill="#7a3f39"/><ellipse cx="1052" cy="660" rx="5" ry="3.5" fill="#7a3f39"/>
-    <path class="ear" style="transform-origin:1000px 552px" d="M1000 552 C1020 532 1048 528 1058 536 C1048 552 1026 560 1006 562 Z" fill="#b4603a"/>
+  <!-- collar and bell, on the neck under the head -->
+  <path d="M922 588 C934 616 950 632 966 640" stroke="#5a3a24" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <g class="bell" style="transform-origin:962px 642px">
+    <path d="M950 642 L974 642 L982 682 L942 682 Z" fill="url(#k-bell)"/>
+    <circle cx="962" cy="686" r="5" fill="#7a5a16"/>
   </g>
-  <!-- collar and bell -->
-  <path d="M982 600 C995 606 1004 620 1006 634" stroke="#5a3a24" stroke-width="10" fill="none" stroke-linecap="round"/>
-  <g class="bell" style="transform-origin:1004px 636px">
-    <path d="M992 636 L1016 636 L1024 676 L984 676 Z" fill="url(#k-bell)"/>
-    <circle cx="1004" cy="680" r="5" fill="#7a5a16"/>
+  <!-- the head turned to the viewer: two eyes, a wide pink nose -->
+  <g class="head" style="transform-origin:990px 600px">
+    <path class="ear" style="transform-origin:968px 556px" d="M968 556 C952 542 934 542 924 552 C934 568 952 572 970 568 Z" fill="#9c4a2b"/>
+    <path d="M960 555 C950 550 940 551 934 555 C942 562 952 564 962 562 Z" fill="#e9a6a0"/>
+    <path class="ear" style="transform-origin:1052px 556px" d="M1052 556 C1068 542 1086 542 1096 552 C1086 568 1068 572 1050 568 Z" fill="#9c4a2b"/>
+    <path d="M1060 555 C1070 550 1080 551 1086 555 C1078 562 1068 564 1058 562 Z" fill="#e9a6a0"/>
+    <path d="M978 532 C970 516 972 500 984 492 C984 506 988 518 994 528 Z M1042 532 C1050 516 1048 500 1036 492 C1036 506 1032 518 1026 528 Z" fill="#efe2c4"/>
+    <path d="M966 548 C966 522 1054 522 1054 548 L1060 628 C1062 664 958 664 960 628 Z" fill="#fffaf3"/>
+    <path d="M966 548 C966 524 1054 524 1054 548 C1042 556 1028 552 1010 560 C992 552 978 556 966 548 Z" fill="url(#k-patch)"/>
+    <path d="M962 572 C970 560 984 558 994 566 C990 584 976 594 964 590 Z" fill="url(#k-patch)" opacity=".9"/>
+    ${eye(986, 582, 8.5, "#fffaf3", 1.3)}
+    ${eye(1034, 582, 8.5, "#fffaf3", 1.3)}
+    <ellipse class="mouth-open" cx="1010" cy="670" rx="32" ry="14" fill="#6b2e2a"/>
+    <g class="jaw jaw-drop">
+      <ellipse cx="1010" cy="664" rx="34" ry="11" fill="#d48b84"/>
+    </g>
+    <ellipse cx="1010" cy="640" rx="50" ry="30" fill="#efb2a8"/>
+    <ellipse cx="992" cy="636" rx="7" ry="5" fill="#7a3f39"/><ellipse cx="1028" cy="636" rx="7" ry="5" fill="#7a3f39"/>
+    <path class="mouth-closed" d="M996 656 C1004 662 1016 662 1024 656" stroke="#b9746d" stroke-width="3" fill="none" stroke-linecap="round"/>
   </g>
 </g>`;

@@ -358,11 +358,18 @@
 @keyframes krava-head {
   12%,
   80% {
-    transform: rotate(-14deg);
+    transform: rotate(-8deg) translateY(-6px);
   }
 }
+/* Seen from the front, the cow's jaw drops straight down. */
 .is-calling[data-animal="krava"] .jaw {
-  animation: jaw-open var(--call, 3s) ease-in-out both;
+  animation: jaw-drop var(--call, 3s) ease-in-out both;
+}
+@keyframes jaw-drop {
+  15%,
+  78% {
+    transform: translateY(9px);
+  }
 }
 @keyframes jaw-open {
   15%,
@@ -438,7 +445,7 @@
     transform: rotate(20deg);
   }
 }
-/* The inside of a mouth shows only while the jaw is dropped; the lion's smile gives way to it. */
+/* The inside of a mouth shows only while the jaw is dropped; a drawn closed mouth gives way to it. */
 .mouth-open {
   opacity: 0;
 }
@@ -451,7 +458,7 @@
     opacity: 1;
   }
 }
-.is-calling[data-animal="lev"] .mouth-closed {
+.is-calling .mouth-closed {
   animation: mouth-hide var(--call, 1.5s) linear both;
 }
 @keyframes mouth-hide {
