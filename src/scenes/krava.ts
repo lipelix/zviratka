@@ -233,6 +233,7 @@ const COW = `
     <path d="M972 548 C995 526 1036 530 1050 560 L1066 640 C1070 670 1050 688 1022 688 C996 688 984 670 982 640 Z" fill="#fffaf3"/>
     <path d="M972 548 C990 530 1012 528 1028 534 C1010 560 1000 590 1004 612 C990 600 978 576 972 548 Z" fill="url(#k-patch)"/>
     ${eye(1022, 590, 9, "#fffaf3", 1.3)}
+    <path class="mouth-open" d="M1008 676 C1018 702 1058 706 1068 680 Z" fill="#6b2e2a"/>
     <g class="jaw" style="transform-origin:1000px 676px">
       <ellipse cx="1036" cy="684" rx="26" ry="10" fill="#d48b84"/>
     </g>

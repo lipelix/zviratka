@@ -435,7 +435,29 @@
 @keyframes lev-jaw {
   20%,
   65% {
-    transform: rotate(22deg);
+    transform: rotate(20deg);
+  }
+}
+/* The inside of a mouth shows only while the jaw is dropped; the lion's smile gives way to it. */
+.mouth-open {
+  opacity: 0;
+}
+.is-calling .mouth-open {
+  animation: mouth-show var(--call, 1.5s) linear both;
+}
+@keyframes mouth-show {
+  8%,
+  80% {
+    opacity: 1;
+  }
+}
+.is-calling[data-animal="lev"] .mouth-closed {
+  animation: mouth-hide var(--call, 1.5s) linear both;
+}
+@keyframes mouth-hide {
+  8%,
+  80% {
+    opacity: 0;
   }
 }
 .is-calling[data-animal="lev"] .mane {

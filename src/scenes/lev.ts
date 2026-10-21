@@ -193,16 +193,21 @@ const LION = `
     </g>
     <circle cx="952" cy="440" r="20" fill="#c48a42"/><circle cx="952" cy="442" r="11" fill="#7a4a24"/>
     <circle cx="1040" cy="452" r="18" fill="#c48a42"/><circle cx="1040" cy="454" r="10" fill="#7a4a24"/>
-    <!-- open mouth, hidden behind the jaw until it drops -->
-    <path d="M990 588 C1000 610 1046 612 1060 590 L1056 586 L994 584 Z" fill="#5a1a14"/>
-    <g class="jaw" style="transform-origin:992px 586px">
-      <path d="M990 584 C996 616 1050 620 1060 590 C1050 600 1000 600 990 584 Z" fill="#e8c890"/>
-      <path d="M1002 600 l4 -10 l4 10 M1042 600 l4 -10 l4 10" fill="#fffaf0"/>
+    <path d="M948 470 C980 446 1050 452 1070 494 C1084 524 1082 556 1068 580 L978 590 C956 562 942 510 948 470 Z" fill="url(#l-fur)"/>
+    <!-- open mouth: shown only while the lower jaw is dropped -->
+    <g class="mouth-open">
+      <path d="M990 584 L1070 580 C1072 598 1064 616 1050 620 C1026 616 1004 602 990 584 Z" fill="#5a1a14"/>
+      <ellipse cx="1036" cy="608" rx="18" ry="7" fill="#d9706a"/>
+      <path d="M1012 586 l4 10 l4 -10 Z M1050 584 l4 11 l4 -11 Z" fill="#fffaf0"/>
     </g>
-    <path d="M948 470 C980 446 1050 452 1070 494 C1084 524 1082 560 1064 588 C1046 610 1000 612 984 590 C960 560 940 510 948 470 Z" fill="url(#l-fur)"/>
-    <path d="M1002 560 C1012 540 1062 540 1070 562 C1072 584 1052 598 1034 598 C1014 598 998 584 1002 560 Z" fill="#f3dcae"/>
+    <g class="jaw" style="transform-origin:980px 586px">
+      <path d="M972 584 L1070 578 C1066 602 1046 614 1022 614 C998 612 980 602 972 584 Z" fill="url(#l-fur)"/>
+      <path d="M1004 586 L1062 584 C1056 598 1042 604 1028 604 C1016 602 1008 596 1004 586 Z" fill="#f3dcae"/>
+    </g>
+    <path d="M1002 560 C1012 540 1062 540 1070 562 C1072 584 1052 594 1034 594 C1014 594 998 582 1002 560 Z" fill="#f3dcae"/>
     <path d="M1022 540 C1032 532 1054 534 1060 544 L1046 560 Z" fill="#3a2016"/>
-    <path d="M1046 560 L1044 574 M1044 574 C1036 584 1024 584 1018 578 M1044 574 C1052 584 1062 582 1066 576" stroke="#3a2016" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M1046 560 L1044 574" stroke="#3a2016" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path class="mouth-closed" d="M1044 574 C1036 584 1024 584 1018 578 M1044 574 C1052 584 1062 582 1066 576" stroke="#3a2016" stroke-width="3.5" fill="none" stroke-linecap="round"/>
     <path d="M1016 572 l-30 -4 M1016 578 l-30 6 M1066 570 l26 -6 M1066 576 l26 4" stroke="#fffaf0" stroke-width="1.6" opacity=".7"/>
     ${eye(1000, 506, 9, "#d39a4c", 0.6, "#c98a1c")}
     ${eye(1050, 508, 8, "#d39a4c", 0.6, "#c98a1c")}
