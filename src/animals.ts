@@ -66,11 +66,11 @@ export const ANIMALS: readonly Animal[] = [
     home: "v africké savaně",
     theme: "#f0a24a",
     credit: {
-      source: "https://commons.wikimedia.org/wiki/File:Lionroar.wav",
-      author:
-        "Jonathan Growcott, Alex Lobora, Andrew Markham, Charlotte E. Searle, Johan Wahlström, Matthew Wijers, Benno I. Simmons",
-      licence: "CC BY 4.0",
-      licenceUrl: BY_4,
+      source:
+        "https://commons.wikimedia.org/wiki/File:Lion_raring-sound1TamilNadu178.ogg",
+      author: "த*உழவன்",
+      licence: "Public domain",
+      licenceUrl: "",
     },
   },
   {
