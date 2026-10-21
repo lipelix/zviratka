@@ -42,7 +42,8 @@ docker build --build-arg GAME_COMMIT=$(git rev-parse --short HEAD) -t zviratka .
   credited in `animals.ts`. Not Google's animal sounds: they carry no licence.
 - Match loudness as a phone speaker hears it, not full-band: measure with
   `ffmpeg -i x.mp3 -af "highpass=f=300:poles=2,highpass=f=300:poles=2,ebur128" -f null -`
-  and keep calls near -15 LUFS there; the lion a bit louder (-13), bright calls (rooster)
+  and keep calls near -15 LUFS there; the lion one soft low-passed roar
+  (two raspy roars scared the children), bright calls (rooster)
   much lower (-23) and low-passed around 3 kHz. Deep
   sounds need energy above 300 Hz, or they vanish on phones: prefer close recordings.
   Peaks stay under -0.3 dBFS after MP3 encoding.

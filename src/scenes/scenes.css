@@ -419,44 +419,34 @@
   }
 }
 
-/* The lion throws its head up, opens its jaws wide and the mane shakes. */
+/* The lion lifts its head, opens its jaws once and the mane ruffles: friendly, not fierce. */
 .is-calling[data-animal="lev"] .head {
-  animation: lev-head var(--call, 4s) ease-in-out both;
+  animation: lev-head var(--call, 1.5s) ease-in-out both;
 }
 @keyframes lev-head {
-  10%,
-  40%,
-  60%,
-  88% {
-    transform: rotate(-8deg) translate(10px, -6px);
-  }
-  50% {
-    transform: rotate(-3deg) translate(4px, 0);
+  20%,
+  70% {
+    transform: rotate(-6deg) translate(6px, -4px);
   }
 }
 .is-calling[data-animal="lev"] .jaw {
-  animation: lev-jaw var(--call, 4s) ease-in-out both;
+  animation: lev-jaw var(--call, 1.5s) ease-in-out both;
 }
 @keyframes lev-jaw {
-  10%,
-  40%,
-  60%,
-  88% {
-    transform: rotate(32deg);
-  }
-  50% {
-    transform: rotate(6deg);
+  20%,
+  65% {
+    transform: rotate(22deg);
   }
 }
 .is-calling[data-animal="lev"] .mane {
-  animation: mane-shake 0.14s ease-in-out infinite alternate;
+  animation: mane-ruffle 0.3s ease-in-out 4 alternate;
 }
-@keyframes mane-shake {
+@keyframes mane-ruffle {
   from {
-    transform: scale(1.03) rotate(-1.5deg);
+    transform: scale(1);
   }
   to {
-    transform: scale(1.07) rotate(1.5deg);
+    transform: scale(1.04) rotate(1deg);
   }
 }
 

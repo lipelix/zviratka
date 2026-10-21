@@ -62,7 +62,7 @@ export const ANIMALS: readonly Animal[] = [
   {
     id: "lev",
     name: "Lev",
-    call: "Grrraaau!",
+    call: "Ráááu!",
     home: "v africké savaně",
     theme: "#f0a24a",
     credit: {
