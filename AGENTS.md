@@ -40,4 +40,9 @@ docker build --build-arg GAME_COMMIT=$(git rev-parse --short HEAD) -t zviratka .
   x 560–1040 and above y ≈ 760 of the view box (`game.spec.ts` checks it).
 - New sounds: freely licensed recordings only (CC0, CC BY, CC BY-SA, public domain),
   credited in `animals.ts`. Not Google's animal sounds: they carry no licence.
+- Match loudness as a phone speaker hears it, not full-band: measure with
+  `ffmpeg -i x.mp3 -af "highpass=f=300:poles=2,highpass=f=300:poles=2,ebur128" -f null -`
+  and keep calls near -15 LUFS there; bright calls (rooster) lower, about -21. Deep
+  sounds (lion) need their harmonics boosted and the lows cut, or they vanish on phones.
+  Peaks stay under -0.3 dBFS after MP3 encoding.
 - Only the page in view animates; keep added animations on `transform`/`opacity`.
