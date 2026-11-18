@@ -8,6 +8,11 @@ import { pageAt, pageFromHash } from "./logic/pager";
 import { registerServiceWorker } from "./pwa/register";
 import { SCENES } from "./scenes";
 
+// The info dialog opens and closes with invoker commands (commandfor/command); browsers
+// without them (Safari before 26.2) load the polyfill.
+if (!("commandForElement" in HTMLButtonElement.prototype))
+  void import("invokers-polyfill");
+
 const app = document.querySelector<HTMLElement>("#app");
 if (!app) throw new Error("#app is missing from index.html");
 
@@ -34,8 +39,8 @@ app.innerHTML = `
 <nav class="dots" aria-label="Zvířátka">
   ${ANIMALS.map((a, i) => `<button type="button" data-go="${i}" aria-label="${a.name}"></button>`).join("")}
 </nav>
-<button class="info" type="button" aria-label="O aplikaci a autorech zvuků">i</button>
-<dialog class="credits">
+<button class="info" type="button" commandfor="credits" command="show-modal" aria-label="O aplikaci a autorech zvuků">i</button>
+<dialog id="credits" class="credits">
   <h2>Zvířátka</h2>
   <p>Ťukni na zvířátko a uslyšíš, jak dělá. Mezi zvířátky přejeď prstem.</p>
   <h3>Zvuky</h3>
@@ -50,7 +55,7 @@ app.innerHTML = `
     ).join("")}
   </ul>
   <p class="small">Nahrávky z Wikimedia Commons, zkrácené a zesílené. Obrázky nakresleny ručně.</p>
-  <form method="dialog"><button type="submit">Zavřít</button></form>
+  <button type="button" commandfor="credits" command="close">Zavřít</button>
 </dialog>`;
 
 const pager = app.querySelector<HTMLElement>(".pager");
@@ -170,7 +175,6 @@ prev?.addEventListener("click", () => goTo(current - 1));
 next?.addEventListener("click", () => goTo(current + 1));
 for (const dot of dots)
   dot.addEventListener("click", () => goTo(Number(dot.dataset["go"])));
-app.querySelector(".info")?.addEventListener("click", () => dialog.showModal());
 
 document.addEventListener("keydown", (e) => {
   if (dialog.open) return;
