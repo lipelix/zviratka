@@ -85,16 +85,27 @@ test("dots, keys and a link pick an animal", async ({ page }) => {
   await expect.poll(() => activePage(page)).toBe("vlk");
 });
 
-test("the info button lists who recorded the sounds", async ({ page }) => {
-  await open(page);
-  await page.locator(".info").click();
-  const dialog = page.locator("dialog.credits");
-  await expect(dialog).toBeVisible();
-  await expect(dialog.locator("li")).toHaveCount(5);
-  await expect(dialog).toContainText("CC BY-SA 4.0");
-  await dialog.getByRole("button", { name: "Zavřít" }).click();
-  await expect(dialog).toBeHidden();
-});
+for (const invokers of ["native", "polyfilled"] as const) {
+  test(`the info button lists who recorded the sounds (${invokers} invoker commands)`, async ({
+    page,
+  }) => {
+    // Browsers without invoker commands (Safari before 26.2) load the polyfill.
+    if (invokers === "polyfilled")
+      await page.addInitScript(() => {
+        delete (HTMLButtonElement.prototype as { commandForElement?: unknown })
+          .commandForElement;
+      });
+    await open(page);
+    await page.locator(".info").click();
+    const dialog = page.locator("dialog.credits");
+    await expect(dialog).toBeVisible();
+    expect(await dialog.evaluate((d) => d.matches(":modal"))).toBe(true);
+    await expect(dialog.locator("li")).toHaveCount(5);
+    await expect(dialog).toContainText("CC BY-SA 4.0");
+    await dialog.getByRole("button", { name: "Zavřít" }).click();
+    await expect(dialog).toBeHidden();
+  });
+}
 
 test("the animal stays fully in view", async ({ page }) => {
   await open(page);
